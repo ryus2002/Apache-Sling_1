@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="BIG5">
+<title>Insert title here</title>
+</head>
+<body>
+
+<sly data-sly-include="../header.html"/>           
+
+${'Hello World' @ i18n, locale=request.locale}
+
+<p data-sly-use.logic="logic.js">${logic.title}</p>
+
+<p data-sly-use.logic="logic.js">
+    <a href="${logic.link}" title="${logic.title}">
+        ${logic.text}
+    </a>
+</p>
+
+<p class="${properties.class}">some text</p>
+
+<input type="checkbox" checked="${properties.isChecked}"/>
+
+<!--/* template.html file: */-->
+<div data-sly-use.logic="logic2.js" data-json="${logic.json}">data-json in div</div>
+
+
+
+</body>
+</html>

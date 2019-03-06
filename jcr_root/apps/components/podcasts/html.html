@@ -1,0 +1,17 @@
+<html>
+<head data-sly-include="${'/apps/components/header.html'}">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h1>這是測試</h1>
+	<h2>${ properties.jcr:title }</h2>
+	<h3>${ properties.jcr:description }</h3>
+	<div data-sly-list="${ resource.listChildren }">
+		<a href="${ item.name @ prependPath='podcasts/', addSelectors=['html'] }" class="list-group-item">
+			<h4 class="list-group-item-heading">${ item.name }</h4>
+			<p class="list-group-item-text">${ item.jcr:title }</p>
+			<p class="list-group-item-text">${ item.jcr:description }</p>
+		</a>
+	</div>
+</body>
+</html>
